@@ -31,7 +31,7 @@ python3 crawler.py > data.json
 ```
 Wpis do CRONa aktualizujący dane o 2 w nocy:
 ```
-0 2 * * * /usr/bin/python3 /var/www/html/crawler/crawler.py > /var/www/html/crawler/data.json
+0 2 * * * /usr/bin/python3 /var/www/html/crawler/crawler.py > /var/www/html/crawler/tmp.json && mv /var/www/html/crawler/tmp.json /var/www/html/crawler/data.json
 ```
 ##### Strona WWW
 Serwer WWW z obsługą PHP w wersji 5 lub wyższej.
