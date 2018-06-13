@@ -102,7 +102,11 @@ for day in range(0, 30):
 
             for field in required_fields:
                 if field in tooltip_data:
-                    output_data.append(tooltip_data[field].strip())
+                    value = tooltip_data[field].strip()
+                    if field == "Data zajęć:":
+                        value = "-".join(value.split('.')[::-1])
+
+                    output_data.append(value)
                 else:
                     all_required_fields = False
                     break
